@@ -51,11 +51,6 @@ pip install -r requirements.txt
 ### Step 2 — Set your MongoDB Atlas URI in `database.py`
 ```python
 # Replace this line in database.py:
-client = MongoClient("your-mongodb-atlas-uri-here")
-
-# Example:
-client = MongoClient("mongodb+srv://admin:password@cluster0.abc123.mongodb.net/")
-```
 
 ### Step 3 — Run the app
 ```bash
