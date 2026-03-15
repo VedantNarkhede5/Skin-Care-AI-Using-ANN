@@ -7,8 +7,7 @@ from datetime import datetime
 
 # ── Connect ──────────────────────────────────────────────────
 # Replace this with your MongoDB Atlas URI if using cloud
-client = MongoClient("mongodb+srv://narkhedevedant212_db_user:Vedant112004@clusterone.rmw6vt9.mongodb.net/")
-db = client["skincare_ai"]
+
 
 users       = db["users"]        # stores user accounts
 assessments = db["assessments"]  # stores face assessments
