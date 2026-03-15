@@ -8,6 +8,8 @@ from datetime import datetime
 # ── Connect ──────────────────────────────────────────────────
 # Replace this with your MongoDB Atlas URI if using cloud
 
+#clint you mongodb line
+#db  your database name
 
 users       = db["users"]        # stores user accounts
 assessments = db["assessments"]  # stores face assessments
