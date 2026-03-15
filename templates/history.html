@@ -1,0 +1,61 @@
+<!-- templates/history.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My History | SkinCare AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <span class="logo">🌿 SkinCare AI</span>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/face">Face Assessment</a>
+      <a href="/history">My History</a>
+      <span class="nav-user">👤 {{ user_name }}</span>
+      <a href="/logout" class="nav-logout">Logout</a>
+    </div>
+  </nav>
+
+  <div class="history-page">
+    <h2>📂 My Assessment History</h2>
+    <p class="subtitle">Only your personal assessments are shown here.</p>
+
+    {% if records %}
+      <div class="history-grid">
+        {% for r in records %}
+        <div class="history-card">
+          <div class="history-header">
+            <span class="hist-name">🧖 Assessment</span>
+            <span class="hist-date">📅 {{ r.date }}</span>
+          </div>
+          <div class="hist-recommendation">
+            <strong>Recommendation</strong>
+            <p>{{ r.recommendation }}</p>
+          </div>
+          <p class="hist-confidence">🤖 Confidence: <strong>{{ r.confidence }}%</strong></p>
+          <details>
+            <summary>View Skin Profile</summary>
+            <table class="mini-table">
+              {% for key, val in r.inputs.items() %}
+              <tr><td>{{ key }}</td><td>{{ val }}</td></tr>
+              {% endfor %}
+            </table>
+          </details>
+        </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty-state">
+        <p>No assessments yet. <a href="/face">Take your first assessment →</a></p>
+      </div>
+    {% endif %}
+
+  </div>
+
+  <footer><p>Skin Care AI &copy; 2024 — Flask · MongoDB · ANN</p></footer>
+</body>
+</html>

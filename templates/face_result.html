@@ -1,0 +1,116 @@
+<!-- templates/face_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Report | SkinCare AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <span class="logo">🌿 SkinCare AI</span>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/face">Face Assessment</a>
+      <a href="/history">History</a>
+    </div>
+  </nav>
+
+  <div class="report-page">
+
+    <!-- ── Header ── -->
+    <div class="report-header">
+      <h2>✨ Hi {{ name }}, here's your skin report!</h2>
+      <p>ANN Confidence: <strong>{{ confidence }}%</strong> &nbsp;|&nbsp; {{ ann_result }}</p>
+    </div>
+
+    <!-- ── Face Profile ── -->
+    <div class="report-section">
+      <h3>👤 Your Face Profile</h3>
+      <div class="profile-grid">
+        {% for key, val in face_info.items() %}
+        <div class="profile-item">
+          <span class="p-label">{{ key }}</span>
+          <span class="p-value">{{ val }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- ── Skincare Routine ── -->
+    <div class="report-section">
+      <h3>🧴 Your Skincare Routine</h3>
+      <div class="routine-grid">
+        <div class="routine-box">
+          <h4>☀️ Morning</h4>
+          <ol>
+            {% for step in routine.morning %}
+            <li>{{ step }}</li>
+            {% endfor %}
+          </ol>
+        </div>
+        <div class="routine-box">
+          <h4>🌙 Night</h4>
+          <ol>
+            {% for step in routine.night %}
+            <li>{{ step }}</li>
+            {% endfor %}
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Food Recommendations ── -->
+    <div class="report-section">
+      <h3>🥗 Food Recommendations</h3>
+      <div class="food-grid">
+        <div class="food-box eat">
+          <h4>✅ Eat More</h4>
+          <ul>
+            {% for item in food.eat %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="food-box avoid">
+          <h4>❌ Avoid</h4>
+          <ul>
+            {% for item in food.avoid %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Product Suggestions ── -->
+    <div class="report-section">
+      <h3>🛍️ Suggested Products <span class="note">(suggestions only — not ads)</span></h3>
+      <div class="products-grid">
+        {% for p in products %}
+        <div class="product-card">
+          <img src="{{ p.image }}" alt="{{ p.name }}" onerror="this.src='https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=200'"/>
+          <div class="product-info">
+            <p class="p-use">{{ p.use }}</p>
+            <p class="p-name">{{ p.name }}</p>
+            <p class="p-price">{{ p.price }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- ── Actions ── -->
+    <div class="report-actions">
+      <a href="/face" class="btn-primary">Try Again</a>
+      <a href="/history" class="btn-secondary">View History</a>
+    </div>
+
+  </div>
+
+  <footer><p>Skin Care AI &copy; 2024 — Flask · MongoDB · ANN</p></footer>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!-- templates/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | SkinCare AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <span class="logo">🌿 SkinCare AI</span>
+    <div class="nav-links">
+      <a href="/login">Login</a>
+      <a href="/signup">Sign Up</a>
+    </div>
+  </nav>
+
+  <div class="auth-page">
+    <div class="auth-card">
+      <div class="auth-icon">🔐</div>
+      <h2>Welcome Back</h2>
+      <p class="auth-sub">Login to access your skin reports</p>
+
+      <!-- Flash messages -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for category, message in messages %}
+          <div class="flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endwith %}
+
+      <form action="/login" method="POST" class="auth-form">
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" placeholder="Enter your email" required/>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" name="password" placeholder="Enter your password" required/>
+        </div>
+        <button type="submit" class="btn-primary">Login →</button>
+      </form>
+
+      <p class="auth-switch">Don't have an account? <a href="/signup">Sign Up</a></p>
+    </div>
+  </div>
+
+  <footer><p>Skin Care AI &copy; 2024 — Flask · MongoDB · ANN</p></footer>
+
+</body>
+</html>

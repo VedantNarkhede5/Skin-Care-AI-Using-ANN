@@ -1,0 +1,71 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SkinCare AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+</head>
+<body>
+
+  <nav class="navbar">
+    <span class="logo">🌿 SkinCare AI</span>
+    <div class="nav-links">
+      {% if user %}
+        <a href="/face">Face Assessment</a>
+        <a href="/history">My History</a>
+        <span class="nav-user">👤 {{ user.name }}</span>
+        <a href="/logout" class="nav-logout">Logout</a>
+      {% else %}
+        <a href="/login">Login</a>
+        <a href="/signup">Sign Up</a>
+      {% endif %}
+    </div>
+  </nav>
+
+  <!-- Flash messages -->
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+      <div class="flash {{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endwith %}
+
+  <section class="hero">
+    <h1>AI-Powered Skin Care Advisor</h1>
+    <p>Describe your face — get a personalised skincare routine, food tips & product suggestions using ANN.</p>
+    <div class="badge">🤖 ANN Model Accuracy: <strong>{{ accuracy }}%</strong></div>
+    <br/><br/>
+    {% if user %}
+      <a href="/face" class="btn-primary">Start Face Assessment →</a>
+    {% else %}
+      <a href="/signup" class="btn-primary">Get Started Free →</a>
+    {% endif %}
+  </section>
+
+  <section class="features">
+    <div class="card">
+      <div class="icon">🧖</div>
+      <h3>Face Analysis</h3>
+      <p>Describe your skin type, tone, acne, and face features via a simple form.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🧴</div>
+      <h3>Skincare Routine</h3>
+      <p>Get a morning and night routine tailored to your exact skin needs.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🥗</div>
+      <h3>Food Tips</h3>
+      <p>Know what to eat and what to avoid for healthier, glowing skin.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🛍️</div>
+      <h3>Product Suggestions</h3>
+      <p>View product recommendations with images and prices — no buying pressure.</p>
+    </div>
+  </section>
+
+  <footer><p>Skin Care AI &copy; 2024 — Flask · MongoDB · ANN</p></footer>
+</body>
+</html>

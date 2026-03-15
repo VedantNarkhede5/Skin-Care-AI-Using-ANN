@@ -1,0 +1,252 @@
+/* style.css */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f7f5;
+  color: #2d2d2d;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Navbar ─────────────────────────── */
+.navbar {
+  background: #2e7d5e;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo { color: white; font-size: 22px; font-weight: 700; }
+.nav-links a {
+  color: #c8eadc; text-decoration: none;
+  margin-left: 24px; font-size: 15px;
+}
+.nav-links a:hover { color: white; }
+
+/* ── Buttons ─────────────────────────── */
+.btn-primary {
+  background: #2e7d5e; color: white; border: none;
+  padding: 12px 28px; border-radius: 8px; font-size: 15px;
+  cursor: pointer; text-decoration: none; display: inline-block;
+}
+.btn-primary:hover { background: #245f49; }
+.btn-secondary {
+  background: white; color: #2e7d5e; border: 2px solid #2e7d5e;
+  padding: 10px 24px; border-radius: 8px; font-size: 15px;
+  text-decoration: none; display: inline-block; margin-left: 12px;
+}
+.btn-secondary:hover { background: #f0faf5; }
+
+/* ── Hero ─────────────────────────────── */
+.hero {
+  background: linear-gradient(135deg, #2e7d5e, #4caf87);
+  color: white; text-align: center; padding: 80px 20px;
+}
+.hero h1 { font-size: 38px; margin-bottom: 16px; }
+.hero p { font-size: 17px; max-width: 520px; margin: 0 auto 24px; opacity: 0.9; }
+.badge {
+  background: rgba(255,255,255,0.2);
+  display: inline-block; padding: 8px 20px;
+  border-radius: 20px; margin-bottom: 28px; font-size: 15px;
+}
+
+/* ── Feature Cards ────────────────────── */
+.features {
+  display: flex; justify-content: center;
+  gap: 24px; padding: 60px 40px; flex-wrap: wrap;
+}
+.card {
+  background: white; border-radius: 12px; padding: 32px 28px;
+  width: 240px; text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.card .icon { font-size: 34px; margin-bottom: 12px; }
+.card h3 { margin-bottom: 8px; color: #2e7d5e; }
+.card p { color: #666; font-size: 14px; line-height: 1.6; }
+
+/* ── Form Page ───────────────────────── */
+.form-page {
+  max-width: 700px; margin: 40px auto; padding: 0 20px; flex: 1;
+}
+.form-page h2 { font-size: 26px; margin-bottom: 6px; color: #2e7d5e; }
+.subtitle { color: #666; margin-bottom: 28px; }
+
+.skin-form {
+  background: white; padding: 36px; border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+.form-group { margin-bottom: 18px; flex: 1; }
+.form-group label {
+  display: block; font-weight: 600; margin-bottom: 6px;
+  color: #444; font-size: 14px;
+}
+.form-group input,
+.form-group select {
+  width: 100%; padding: 10px 14px; border: 1.5px solid #ddd;
+  border-radius: 8px; font-size: 15px; background: #fafafa;
+}
+.form-group input:focus,
+.form-group select:focus { border-color: #2e7d5e; outline: none; }
+.form-row { display: flex; gap: 18px; }
+.section-title {
+  font-size: 15px; font-weight: 700; color: #2e7d5e;
+  margin: 22px 0 14px; border-left: 4px solid #2e7d5e;
+  padding-left: 10px;
+}
+.skin-form .btn-primary { width: 100%; margin-top: 10px; padding: 14px; font-size: 16px; }
+
+/* ── Report Page ─────────────────────── */
+.report-page {
+  max-width: 860px; margin: 40px auto; padding: 0 20px; flex: 1;
+}
+.report-header {
+  background: linear-gradient(135deg, #2e7d5e, #4caf87);
+  color: white; padding: 28px 32px; border-radius: 14px;
+  margin-bottom: 24px;
+}
+.report-header h2 { font-size: 24px; margin-bottom: 8px; }
+.report-header p { font-size: 14px; opacity: 0.9; }
+
+.report-section {
+  background: white; border-radius: 12px; padding: 28px;
+  margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+.report-section h3 {
+  font-size: 18px; color: #2e7d5e; margin-bottom: 18px;
+  border-bottom: 2px solid #e8f5ee; padding-bottom: 10px;
+}
+
+/* Face Profile */
+.profile-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+}
+.profile-item {
+  background: #f8fdfb; border-radius: 8px; padding: 12px 16px;
+  display: flex; flex-direction: column;
+}
+.p-label { font-size: 12px; color: #888; margin-bottom: 4px; }
+.p-value { font-size: 15px; font-weight: 600; color: #2d2d2d; }
+
+/* Routine */
+.routine-grid { display: flex; gap: 20px; }
+.routine-box {
+  flex: 1; background: #f8fdfb; border-radius: 10px; padding: 18px 20px;
+}
+.routine-box h4 { font-size: 15px; color: #2e7d5e; margin-bottom: 12px; }
+.routine-box ol { padding-left: 18px; }
+.routine-box li { font-size: 14px; color: #444; margin-bottom: 7px; line-height: 1.5; }
+
+/* Food */
+.food-grid { display: flex; gap: 20px; }
+.food-box { flex: 1; border-radius: 10px; padding: 18px 20px; }
+.food-box.eat { background: #f0faf5; }
+.food-box.avoid { background: #fff5f5; }
+.food-box h4 { font-size: 15px; margin-bottom: 12px; }
+.food-box.eat h4 { color: #2e7d5e; }
+.food-box.avoid h4 { color: #c0392b; }
+.food-box ul { padding-left: 18px; }
+.food-box li { font-size: 14px; color: #444; margin-bottom: 7px; }
+
+/* Products */
+.products-grid { display: flex; gap: 18px; flex-wrap: wrap; }
+.product-card {
+  width: 180px; background: #f8fdfb; border-radius: 12px;
+  overflow: hidden; box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+}
+.product-card img {
+  width: 100%; height: 140px; object-fit: cover;
+}
+.product-info { padding: 12px; }
+.p-use { font-size: 11px; color: #2e7d5e; font-weight: 700; text-transform: uppercase; margin-bottom: 4px; }
+.p-name { font-size: 13px; font-weight: 600; color: #333; margin-bottom: 6px; line-height: 1.4; }
+.p-price { font-size: 15px; font-weight: 700; color: #2e7d5e; }
+.note { font-size: 12px; color: #aaa; font-weight: 400; }
+
+.report-actions { text-align: center; margin: 30px 0; }
+
+/* ── History ─────────────────────────── */
+.history-page { max-width: 900px; margin: 40px auto; padding: 0 20px; flex: 1; }
+.history-page h2 { font-size: 26px; color: #2e7d5e; margin-bottom: 20px; }
+.search-form { display: flex; gap: 12px; margin-bottom: 28px; align-items: center; }
+.search-form input {
+  flex: 1; padding: 10px 16px; border: 1.5px solid #ddd; border-radius: 8px; font-size: 15px;
+}
+.search-form input:focus { border-color: #2e7d5e; outline: none; }
+.history-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 18px; }
+.history-card { background: white; border-radius: 12px; padding: 22px; box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
+.history-header { display: flex; justify-content: space-between; margin-bottom: 4px; }
+.hist-name { font-weight: 700; color: #2e7d5e; }
+.hist-date { color: #aaa; font-size: 13px; }
+.hist-email { color: #888; font-size: 13px; margin-bottom: 12px; }
+.hist-recommendation { background: #f0faf5; border-radius: 8px; padding: 10px 14px; margin-bottom: 10px; }
+.hist-recommendation strong { color: #2e7d5e; font-size: 12px; }
+.hist-recommendation p { font-size: 13px; line-height: 1.5; margin-top: 4px; }
+.hist-confidence { font-size: 13px; color: #666; margin-bottom: 10px; }
+details summary { cursor: pointer; font-size: 13px; color: #2e7d5e; font-weight: 600; }
+.mini-table { width: 100%; margin-top: 8px; border-collapse: collapse; }
+.mini-table td { padding: 4px 8px; font-size: 12px; color: #555; border-bottom: 1px solid #f5f5f5; }
+.empty-state { text-align: center; padding: 60px; color: #888; }
+.empty-state a { color: #2e7d5e; font-weight: 600; }
+
+/* ── Result Page (old) ───────────────── */
+.result-page { display: flex; justify-content: center; padding: 50px 20px; flex: 1; }
+.result-card { background: white; border-radius: 16px; padding: 40px; max-width: 600px; width: 100%; box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: center; }
+.result-icon { font-size: 48px; margin-bottom: 14px; }
+.result-card h2 { font-size: 24px; color: #2e7d5e; margin-bottom: 8px; }
+.confidence-text { color: #888; margin-bottom: 24px; }
+.recommendation-box { background: #f0faf5; border-left: 4px solid #2e7d5e; border-radius: 10px; padding: 18px 22px; text-align: left; margin-bottom: 24px; }
+.recommendation-box h3 { color: #2e7d5e; margin-bottom: 8px; }
+.recommendation-box p { font-size: 15px; line-height: 1.7; }
+.inputs-summary { text-align: left; margin-bottom: 24px; }
+.inputs-summary h4 { margin-bottom: 10px; color: #555; }
+.inputs-summary table { width: 100%; border-collapse: collapse; }
+.inputs-summary td { padding: 7px 10px; font-size: 14px; border-bottom: 1px solid #f0f0f0; }
+.label-col { color: #888; width: 50%; }
+.value-col { font-weight: 600; }
+.result-actions { margin-top: 10px; }
+
+/* ── Footer ─────────────────────────── */
+footer { text-align: center; padding: 18px; font-size: 13px; color: #aaa; border-top: 1px solid #eee; margin-top: auto; }
+
+/* ── Auth Pages (Login / Signup) ─────── */
+.auth-page {
+  display: flex; justify-content: center;
+  align-items: center; padding: 60px 20px; flex: 1;
+}
+.auth-card {
+  background: white; border-radius: 16px; padding: 40px;
+  width: 100%; max-width: 420px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1); text-align: center;
+}
+.auth-icon { font-size: 44px; margin-bottom: 12px; }
+.auth-card h2 { font-size: 24px; color: #2e7d5e; margin-bottom: 6px; }
+.auth-sub { color: #888; font-size: 14px; margin-bottom: 24px; }
+.auth-form { text-align: left; }
+.auth-form .btn-primary { width: 100%; margin-top: 8px; padding: 13px; font-size: 16px; }
+.auth-switch { margin-top: 20px; font-size: 14px; color: #666; }
+.auth-switch a { color: #2e7d5e; font-weight: 600; text-decoration: none; }
+
+/* ── Flash Messages ──────────────────── */
+.flash {
+  padding: 12px 20px; border-radius: 8px; font-size: 14px;
+  margin: 10px 40px; font-weight: 500;
+}
+.flash.success { background: #e8f5ee; color: #2e7d5e; border: 1px solid #b2dfc8; }
+.flash.error   { background: #fff0f0; color: #c0392b; border: 1px solid #f5b8b8; }
+
+/* ── Navbar user info ────────────────── */
+.nav-user {
+  color: #c8eadc; font-size: 14px; margin-left: 24px; font-weight: 600;
+}
+.nav-logout {
+  background: rgba(255,255,255,0.15); color: white !important;
+  padding: 5px 14px; border-radius: 20px; font-size: 13px;
+  margin-left: 10px; transition: background 0.2s;
+}
+.nav-logout:hover { background: rgba(255,255,255,0.3) !important; }
+
+/* ── History subtitle ────────────────── */
+.history-page .subtitle { color: #888; font-size: 14px; margin-bottom: 24px; margin-top: -10px; }
